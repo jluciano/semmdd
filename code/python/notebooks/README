@@ -1,0 +1,15 @@
+In order to use these notebooks, you will need ipython-notebook. To run, do the following in the notebooks directory:
+
+ipython --pylab inline --script
+
+This will launch a webserver running locally through which you can play with the notebooks. The simplest way to get started is to
+click on cells and use shift-enter to run them. Anything that the cell does (variable creation/modification) is saved to the stack for 
+cells following it.
+
+--- SPARQL data
+In order to access the data, you will need to run the following (on unix):
+
+ssh -N -l username -p 2244 -L 8080:localhost:8890 aquarius.tw.rpi.edu
+
+Replacing username with your username. You will need to be on the RPI network for this to work. The ssh command should hang -- it's working.
+Then you will be set to play with the data/run the model.
