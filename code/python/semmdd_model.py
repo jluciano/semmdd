@@ -47,6 +47,7 @@ class data_preproc:
 		if study == 'UPittSSRI':
 			# Handle specific case of UPittSSRI data
 			# First, make and send query to get list of patients that terminated the study correctly
+			# Thanks Brendan Ashby for the queries
 			patientTerminationsQuery = """
 			prefix dcterms: <http://purl.org/dc/terms/>
 			prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
