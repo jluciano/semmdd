@@ -1,0 +1,537 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://semantic-mediawiki.org/swivt/1.0"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://semantic-mediawiki.org/swivt/1.0">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swivt" IRI="http://semantic-mediawiki.org/swivt/1.0#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This ontology describes the elements used in the export of Semantic MediaWiki. More information can be found at http://semantic-mediawiki.org</Literal>
+    </Annotation>
+    <Declaration>
+        <ObjectProperty IRI="#baseProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conversionFactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object2"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object3"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object4"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object5"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object6"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object7"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object8"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object9"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#page"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#type"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#allowedValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#displayUnit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#factor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#mainUnit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#modifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#unit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value2"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value3"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value4"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value5"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value6"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value7"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value8"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#value9"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wikiNamespace"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wikiPageModificationDate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#creationDate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#sourceSite"/>
+    </Declaration>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object1"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object2"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object3"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object4"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object5"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object6"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object7"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object8"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#object9"/>
+        <ObjectProperty IRI="#object"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#mainUnit"/>
+        <DataProperty IRI="#unit"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value1"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value2"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value3"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value4"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value5"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value6"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value7"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value8"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#value9"/>
+        <DataProperty IRI="#value"/>
+    </SubDataPropertyOf>
+    <DataPropertyRange>
+        <DataProperty IRI="#factor"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#unit"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wikiNamespace"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wikiPageModificationDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EmailType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Email</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GeoType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Geographic coordinate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NumberType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Number</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PageType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Page</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StringType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">String</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemperatureType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Temperature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TextType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Text</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TimeType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#URIType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">URI</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#allowedValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A string presentation that may be given as input to a property. Note that this is not the actual property value but a part of the UI description of the wiki.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#baseProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The base property of a property is an abstract property that does not specify sufficiently certain values so that the property value can be properly understood. It connects two properties with each other, for example lenght_(meters) has the base property lenght and the modifier meters.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#baseProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Base property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#creationDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Specifies the exact time at which this particular ontology was created. Used for owl:Ontologies only.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#creationDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Date of creation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#modifier</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects a property with a string that instantiates the meaning of the abstract base property connected to the property. For example, the triple a length 3 would have no meaning, since it is unclear in what unit 3 has to be understood. Here we introduce a new property lenght_(m) with the base property lenght and the modifier m, so that we know the 3 is measured in m.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#modifier</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Modifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 1 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object2</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 2 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object2</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object3</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 3 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object3</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object4</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 4 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object4</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object5</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 5 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object5</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object6</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 6 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object6</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object7</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 7 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object7</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object8</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 8 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object8</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 8</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object9</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter object 9 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object9</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter object 9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#page</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects a swivt:Subject (URI) with the according swivt:Wikipage (URL).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#page</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Page</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sourceSite</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Specifies the URL of the (wiki) site that the given ontology relates to. Used for owl:Ontologies only.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sourceSite</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Source site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#type</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The wiki-specified type of a property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#type</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Has type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 1 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value2</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 2 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value2</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value3</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 3 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value3</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value4</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 4 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value4</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value5</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 5 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value5</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value6</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 6 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value6</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value7</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 7 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value7</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value8</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 8 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value8</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 8</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value9</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects an NAry to parameter value 9 of the NAry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#value9</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Parameter value 9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wikiNamespace</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects a swivt:Subject to the numerical namespace that its page in the exporting wiki belongs to.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#wikiNamespace</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Wiki namespace</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wikiPageModificationDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Connects a swivt:Subject to the time point at which the according page in the wiki was last modified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#wikiPageModificationDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Modification date</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
