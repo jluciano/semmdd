@@ -1,0 +1,668 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY wiki "http://neurolex.org/wiki/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY property "http://neurolex.org/wiki/Property-3A" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY swivt "http://semantic-mediawiki.org/swivt/1.0#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&wiki;Special:ExportRDF/:Category:Calgary_Depression_Scale#"
+     xml:base="&wiki;Special:ExportRDF/:Category:Calgary_Depression_Scale"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swivt="http://semantic-mediawiki.org/swivt/1.0#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:property="&wiki;Property-3A"
+     xmlns:wiki="http://neurolex.org/wiki/">
+    <owl:Ontology rdf:about="&wiki;Special:ExportRDF/:Category:Calgary_Depression_Scale">
+        <swivt:creationDate rdf:datatype="&xsd;dateTime">2013-07-10T06:24:57-07:00</swivt:creationDate>
+        <rdfs:comment>An ontology concerning the Hamilton Depression Scale. All scales up to 29 questions and down to 19 questions included.</rdfs:comment>
+        <owl:imports rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semantic-mediawiki.org/swivt/1.0#creationDate -->
+
+    <owl:AnnotationProperty rdf:about="&swivt;creationDate">
+        <rdfs:isDefinedBy rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://semantic-mediawiki.org/swivt/1.0#page -->
+
+    <owl:AnnotationProperty rdf:about="&swivt;page">
+        <rdfs:isDefinedBy rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasAnswer -->
+
+    <owl:ObjectProperty rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasAnswer">
+        <rdfs:range rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+        <owl:inverseOf rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestion -->
+
+    <owl:ObjectProperty rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestion"/>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasTopic -->
+
+    <owl:ObjectProperty rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasTopic"/>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType">
+        <rdfs:range rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf -->
+
+    <owl:ObjectProperty rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf">
+        <rdfs:range rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isTypeOf">
+        <rdfs:range rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+        <owl:inverseOf rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AHas_role -->
+
+    <owl:ObjectProperty rdf:about="&wiki;Property-3AHas_role">
+        <rdfs:label>Has role</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Has_role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semantic-mediawiki.org/swivt/1.0#page -->
+
+    <rdf:Description rdf:about="&swivt;page">
+        <rdfs:isDefinedBy rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AAbbrev -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3AAbbrev">
+        <rdfs:label>Abbrev</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Abbrev"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ACreated -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3ACreated">
+        <rdfs:label>Created</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Created"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ACurationStatus -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3ACurationStatus">
+        <rdfs:label>CurationStatus</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:CurationStatus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ADefiningCitation -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3ADefiningCitation">
+        <rdfs:label>DefiningCitation</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:DefiningCitation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ADefinition -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3ADefinition">
+        <rdfs:label>Definition</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Definition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AId -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3AId">
+        <rdfs:label>Id</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Id"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ALabel -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3ALabel">
+        <rdfs:label>Label</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Label"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AModifiedDate -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3AModifiedDate">
+        <rdfs:label>ModifiedDate</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:ModifiedDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ASuperCategory -->
+
+    <owl:DatatypeProperty rdf:about="&wiki;Property-3ASuperCategory">
+        <rdfs:label>SuperCategory</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:SuperCategory"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#&apos;Hamilton_Depression_Scale&apos; -->
+
+    <owl:Class rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#&apos;Hamilton_Depression_Scale&apos;">
+        <rdfs:subClassOf rdf:resource="&wiki;Category-3ARating_scale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer -->
+
+    <owl:Class rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasTopic"/>
+                <owl:onClass rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Topic"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf"/>
+                <owl:someValuesFrom rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&swivt;value"/>
+                <owl:someValuesFrom rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">A response to a question. Ranges from 0 to 4. Is an Int.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-19 -->
+
+    <owl:Class rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-19">
+        <rdfs:subClassOf rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+        <rdfs:comment>A 19 question version of the depression scale.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-28 -->
+
+    <owl:Class rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-28">
+        <rdfs:subClassOf rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+        <rdfs:comment>A 28 question version of the depression scale.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question -->
+
+    <owl:Class rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isTypeOf"/>
+                <owl:onClass rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasTopic"/>
+                <owl:onClass rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Topic"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasAnswer"/>
+                <owl:onClass rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A question to a questionnaire. Has an answer. Has a version.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion -->
+
+    <owl:Class rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion">
+        <rdfs:comment>A version of the depression scale is determined by the amount of questions contained.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Topic -->
+
+    <owl:Class rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Topic">
+        <rdfs:comment rdf:datatype="&xsd;string">A topic if a question or answer. For a question, it ranges from &quot;Depressed Mood&quot; to &quot;Suicide&quot;. A topic for a question would be the answer given if a patient asked (What is this question that you are asking me about?). For a answer, the topic is a description of what that answer means to a question. The meaning behind the answer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category-3AAffective_assessment -->
+
+    <owl:Class rdf:about="&wiki;Category-3AAffective_assessment">
+        <rdfs:label>Affective assessment</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Category:Affective_assessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category-3ARating_scale -->
+
+    <owl:Class rdf:about="&wiki;Category-3ARating_scale">
+        <rdfs:label>Rating scale</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Category:Rating_scale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semantic-mediawiki.org/swivt/1.0#Subject -->
+
+    <owl:Class rdf:about="&swivt;Subject">
+        <rdfs:isDefinedBy rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_0 -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_0">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_1 -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_1">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_2 -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_2">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_3 -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_3">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_4 -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer_4">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale">
+        <wiki:Property-3AAbbrev rdf:datatype="&xsd;string">HRSD</wiki:Property-3AAbbrev>
+        <wiki:Property-3ALabel rdf:datatype="&xsd;string">Hamilton Depression Scale</wiki:Property-3ALabel>
+        <wiki:Property-3ASuperCategory rdf:datatype="&xsd;string">Rating Scale</wiki:Property-3ASuperCategory>
+        <wiki:Property-3ADefinition rdf:datatype="&xsd;string">The Hamilton Rating Scale for Depression (HRSD), or Hamilton Depression Rating Scale (HDRS) also abbreviated to HAM-D, is a multiple choice questionnaire that clinicians may use to rate the severity of a patient&apos;s major depression. The questionnaire rates the severity of symptoms observed in depression such as low mood, insomnia, agitation, anxiety and weight loss. This instrument is presently one of the most commonly used scales for rating depression in medical research.</wiki:Property-3ADefinition>
+        <wiki:Property-3AHas_role rdf:resource="&wiki;Category-3AAffective_assessment"/>
+        <swivt:type rdf:resource="&wiki;Category-3ARating_scale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_1 -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_1">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_2 -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_2">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_X -->
+
+    <owl:NamedIndividual rdf:about="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_X">
+        <rdf:type rdf:resource="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category-3AAffective_assessment -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Category-3AAffective_assessment">
+        <swivt:page rdf:resource="&wiki;Category:Affective_assessment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category-3ACalgary_Depression_Scale -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Category-3ACalgary_Depression_Scale">
+        <wiki:Property-3ACreated rdf:datatype="&xsd;dateTime">2008-03-14T00:00:00</wiki:Property-3ACreated>
+        <wiki:Property-3AModifiedDate rdf:datatype="&xsd;dateTime">2009-09-08T00:00:00</wiki:Property-3AModifiedDate>
+        <wiki:Property-3ADefiningCitation rdf:datatype="&xsd;string">Addington, D., Addington, J., Maticka-Tyndale, E., &amp; Joyce, J. (1992). Reliability and validity of a depression rating scale for schizophrenics. Schizophrenia Research, 6, 201-208.</wiki:Property-3ADefiningCitation>
+        <wiki:Property-3AAbbrev rdf:datatype="&xsd;string">CDSS</wiki:Property-3AAbbrev>
+        <wiki:Property-3ALabel rdf:datatype="&xsd;string">Calgary Depression Scale</wiki:Property-3ALabel>
+        <wiki:Property-3ASuperCategory rdf:datatype="&xsd;string">Rating scale</wiki:Property-3ASuperCategory>
+        <wiki:Property-3ADefinition rdf:datatype="&xsd;string">The CDSS is an assessment of depression in schizophrenia. It has been extensively evaluated in both relapsed and remitted patients and appears sensitive to change. In comparison to the Hamilton Depression Scale, it has fewer factors and less overlap with positive and negative symptoms. This lack of overlap is present both at the time of relapse and at the time of remission</wiki:Property-3ADefinition>
+        <wiki:Property-3AId rdf:datatype="&xsd;string">birnlex_3010</wiki:Property-3AId>
+        <wiki:Property-3ACurationStatus rdf:datatype="&xsd;string">uncurated</wiki:Property-3ACurationStatus>
+        <wiki:Property-3AHas_role rdf:resource="&wiki;Category-3AAffective_assessment"/>
+        <swivt:page rdf:resource="&wiki;Category:Calgary_Depression_Scale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category-3ARating_scale -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Category-3ARating_scale">
+        <swivt:page rdf:resource="&wiki;Category:Rating_scale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category:Affective_assessment -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Category:Affective_assessment"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category:Calgary_Depression_Scale -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Category:Calgary_Depression_Scale"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Category:Rating_scale -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Category:Rating_scale"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AAbbrev -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3AAbbrev">
+        <rdfs:label>Abbrev</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:Abbrev"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Abbrev"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ACreated -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3ACreated">
+        <rdfs:label>Created</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:Created"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Created"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ACurationStatus -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3ACurationStatus">
+        <rdfs:label>CurationStatus</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:CurationStatus"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:CurationStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ADefiningCitation -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3ADefiningCitation">
+        <rdfs:label>DefiningCitation</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:DefiningCitation"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:DefiningCitation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ADefinition -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3ADefinition">
+        <rdfs:label>Definition</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:Definition"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Definition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AHas_role -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3AHas_role">
+        <rdfs:label>Has role</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:Has_role"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Has_role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AId -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3AId">
+        <rdfs:label>Id</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:Id"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Id"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ALabel -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3ALabel">
+        <rdfs:label>Label</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:Label"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:Label"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3AModifiedDate -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3AModifiedDate">
+        <rdfs:label>ModifiedDate</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:ModifiedDate"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:ModifiedDate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property-3ASuperCategory -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property-3ASuperCategory">
+        <rdfs:label>SuperCategory</rdfs:label>
+        <swivt:page rdf:resource="&wiki;Property:SuperCategory"/>
+        <rdfs:isDefinedBy rdf:resource="&wiki;Special:ExportRDF/Property:SuperCategory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:Abbrev -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:Abbrev"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:Created -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:Created"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:CurationStatus -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:CurationStatus"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:DefiningCitation -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:DefiningCitation"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:Definition -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:Definition"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:Has_role -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:Has_role"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:Id -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:Id"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:Label -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:Label"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:ModifiedDate -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:ModifiedDate"/>
+    
+
+
+    <!-- http://neurolex.org/wiki/Property:SuperCategory -->
+
+    <owl:NamedIndividual rdf:about="&wiki;Property:SuperCategory"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
