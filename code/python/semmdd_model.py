@@ -1,4 +1,5 @@
 import numpy as np
+import math
 import optparse
 import datetime
 import time
@@ -13,6 +14,8 @@ class data_preproc:
 		self.sparql_interface = SPARQLWrapper('http://localhost:8080/sparql')
 		self.sparql_interface.setReturnFormat(JSON)
 		self.sparql_interface.setQuery('select distinct ?Concept where {[] a ?Concept} LIMIT 1')
+		self.data_loaded = False
+		self.data_preprocessed = False
 		# Test to make sure connection works
 		try:
 			self.sparql_interface.query()
@@ -21,7 +24,7 @@ class data_preproc:
 			raise IOError
 
 
-	def load(self, study='UPittSSRI', chosen_quests=['1','2','3','4','5','6','7','8','10','13']):
+	def load(self, study='UPittSSRI', chosen_quests=['1','2','3','4','5','6','7','8','10','13'], norm=True):
 		""" Loads data from the specified study, currently the only option is 'UPittSSRI'
 				Returns a list of patient ids."""
 		try:
@@ -34,13 +37,18 @@ class data_preproc:
 			print "Took %f seconds" % toc
 			print "Making data usable"
 			tic = time.time()
-			self.data = self.make_usable(raw_data, chosen_quests)
+			try:
+				self.data = self.make_usable(raw_data, chosen_quests, norm)
+			except ValueError:
+				raise ValueError
 			toc = time.time() - tic
 			print "Took %f seconds" % toc
+			self.data_loaded = True
 			return self.data.keys()
 		except IOError as detail:
 			print "Could not retrieve data:", detail
-		pass
+			self.data_loaded = False
+			return None
 
 	def make_query(self, study, chosen_quests):
 		""" Internal to use the name of a study to make a final query. For some data we need to make multiple queries """
@@ -96,7 +104,7 @@ class data_preproc:
 
 		return main_query
 
-	def make_usable(self, raw_data, chosen_quests):
+	def make_usable(self, raw_data, chosen_quests, norm=True):
 		""" Internal function that turns the SPARQL output into something the model can use """
 		# We need to interpret the data into a usable format. We'll start by making a dictionary keyed on each patient, with
 		# the items being a dictionary of date:list of responses. 
@@ -109,6 +117,7 @@ class data_preproc:
 			question = i['question']['value'].split('/')[-1]
 			question_slot = question_slots[question]
 			answer = int(i['answer']['value'].split('/')[-1])
+			normed_answer = answer / float(max_ham[question])
 			
 			# First setup a dictionary for the patient if one does not already exist
 			if not patient_id in shaped_data:
@@ -124,23 +133,69 @@ class data_preproc:
 				print "Conflicting data. Abort."
 				print "Patient ID %s's response to question %s on date %s has already been filled with value %d" (patient_id, question, response_date.ctime(), answer)
 				raise ValueError																																								    
-			shaped_data[patient_id][response_date][question_slot] = answer
+			if norm:
+				shaped_data[patient_id][response_date][question_slot] = normed_answer
+			else:	
+				shaped_data[patient_id][response_date][question_slot] = answer
 
 		# Now that we've shaped the data, we need to order it by date for the model. Simple enough
 		ordered_data = dict()
 		for patient in shaped_data:
-			ordered_data[patient] = []
+			ordered_data[patient] = dict()
+			ordered_data[patient]['dates'] = []
+			ordered_data[patient]['data'] = []
 			for date in sorted(shaped_data[patient].iterkeys()):
-				ordered_data[patient].append(shaped_data[patient][date])
+				ordered_data[patient]['data'].append(shaped_data[patient][date])
+				ordered_data[patient]['dates'].append(date)
 
 		# And we're done here
 
+		self.ordered_data = ordered_data
 		return ordered_data
 
+	def prefilter(self, keep_days=124, min_days=31, min_data=4):
+		""" Normalizes data, sets up data to use the spline """
+		# Requires load to be run first, so we'll check that.
+		removed = 0
+		filtered_data = dict()
+		if not self.data_loaded:
+			print "You need to load the data before you can preprocess it"
+			raise ValueError
+
+		# Pass through the data
+		for patient in self.ordered_data:
+			# First we're going to cut out any data after the number of days specified by keep_days
+			length = math.fabs((self.ordered_data[patient]['dates'][-1] - self.ordered_data[patient]['dates'][0]).days)
+			if length < min_days:
+				# Also skip if there's less than min_days
+				removed += 1
+				continue
+
+			initial_date = self.ordered_data[patient]['dates'][0]
+			final_ind = 0
+			for date_ind, date in enumerate(self.ordered_data[patient]['dates'][1:]):
+				num_days = (date - initial_date).days
+				final_ind += 1
+				if num_days >= keep_days:
+					break
 			
+			# Then we're going to cut out any patient with less than 4 datapoints. This is for cubic splining's sake
+
+			if final_ind < min_data:
+				removed += 1
+				continue
+
+			# now that all of this filtering is done, let's build our filtered_data entry
+			filtered_data[patient] = dict()
+			filtered_data[patient]['data'] = self.ordered_data[patient]['data'][:final_ind+1]
+			filtered_data[patient]['dates'] = self.ordered_data[patient]['dates'][:final_ind+1]
+
+
 	
-	def spline(self):
-		""" Interpolates weekly data into daily data using a linear spline """
+	def spline(self, k=1, s=1, min_data=3):
+		""" Interpolates uneven observation data into daily data using scipy.interpolate.UnivariateSpline with parameters k and s given"""
+
+
 		pass
 	
 
