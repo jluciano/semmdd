@@ -4,6 +4,7 @@ import optparse
 import datetime
 import time
 from SPARQLWrapper import SPARQLWrapper, JSON
+from scipy.interpolate import UnivariateSpline
 
 class data_preproc:
 	""" Class that sets up the connection to the SPARQL Endpoint, gets the data you want, preprocesses (splines & normalizes) the data, and
@@ -16,6 +17,7 @@ class data_preproc:
 		self.sparql_interface.setQuery('select distinct ?Concept where {[] a ?Concept} LIMIT 1')
 		self.data_loaded = False
 		self.data_preprocessed = False
+		self.data_splined = False
 		# Test to make sure connection works
 		try:
 			self.sparql_interface.query()
@@ -28,6 +30,7 @@ class data_preproc:
 		""" Loads data from the specified study, currently the only option is 'UPittSSRI'
 				Returns a list of patient ids."""
 		try:
+			self.num_items = len(chosen_quests)
 			query = self.make_query(study, chosen_quests)
 			self.sparql_interface.setQuery(query)
 			print "Retrieving data"
@@ -156,48 +159,87 @@ class data_preproc:
 	def prefilter(self, keep_days=124, min_days=31, min_data=4):
 		""" Normalizes data, sets up data to use the spline """
 		# Requires load to be run first, so we'll check that.
-		removed = 0
-		filtered_data = dict()
+		self.removed = 0
+		self.keep_days = keep_days
+		self.min_days = min_days
+		self.min_data = min_data
 		if not self.data_loaded:
 			print "You need to load the data before you can preprocess it"
 			raise ValueError
 
+		filtered_data = dict()
 		# Pass through the data
 		for patient in self.ordered_data:
 			# First we're going to cut out any data after the number of days specified by keep_days
 			length = math.fabs((self.ordered_data[patient]['dates'][-1] - self.ordered_data[patient]['dates'][0]).days)
 			if length < min_days:
 				# Also skip if there's less than min_days
-				removed += 1
+				self.removed += 1
 				continue
 
 			initial_date = self.ordered_data[patient]['dates'][0]
-			final_ind = 0
+			final_ind = 1
 			for date_ind, date in enumerate(self.ordered_data[patient]['dates'][1:]):
 				num_days = (date - initial_date).days
-				final_ind += 1
 				if num_days >= keep_days:
-					break
-			
+					break	
+				final_ind += 1
 			# Then we're going to cut out any patient with less than 4 datapoints. This is for cubic splining's sake
 
 			if final_ind < min_data:
-				removed += 1
+				self.removed += 1
 				continue
 
 			# now that all of this filtering is done, let's build our filtered_data entry
 			filtered_data[patient] = dict()
-			filtered_data[patient]['data'] = self.ordered_data[patient]['data'][:final_ind+1]
-			filtered_data[patient]['dates'] = self.ordered_data[patient]['dates'][:final_ind+1]
+			filtered_data[patient]['data'] = self.ordered_data[patient]['data'][:final_ind]
+			filtered_data[patient]['dates'] = self.ordered_data[patient]['dates'][:final_ind]
 
-
+		self.filtered_data = filtered_data
+		return filtered_data
 	
 	def spline(self, k=1, s=1, min_data=3):
 		""" Interpolates uneven observation data into daily data using scipy.interpolate.UnivariateSpline with parameters k and s given"""
+		# requires filtered_data to exist, check by making sure it isn't empty
+		if len(filtered_data) == 0:
+			raise ValueError
 
+		# first we need to redo the dates as days from start
+		for patient in self.filtered_data:
+			self.filtered_data[patient]['days'] = []
+			for date in self.filtered_data[patient]['dates']:
+				since_beginning = (date - self.filtered_data[patient]['dates'][0]).days
+				self.filtered_data[patient]['days'].append(since_beginning)
 
-		pass
-	
+		# now we spline
+		error = 0
+		splined_data = dict()
+		for patient in self.filtered_data:
+			day_indices = np.array(self.filtered_data[patient]['days'])
+			splined_data[patient] = []
+			for question in range(self.num_items):
+				item_data = np.array(i[question] for i in filtered_data[patient]['data'])
+				# Now we need to take out the data with None values... not certain how to handle it if the patient ends up not having enough data
+				# because of this filtering, but for UPittSSRI data (primary focus as of 7/29/13) we don't need to worry about it
+				good_indices = np.array([ind for ind, resp in enumerate(item_data) if resp != None])
+				filtered_days = day_indices[good_indices]
+				filtered_data = item_data[good_indices]
+				full_space = np.linspace(0,self.keep_days,num=keep_days)
+				spl = UnivariateSpline(filtered_days, filtered_data, k=k, s=s)
+				self.residual = spl.get_residual()
+				self.knots = spl.get_knots()
+				splined = spl(full_space)
+				splined_data[patient].append(splined)
+				# Measure error
+				ms = sqrt(sum((splined[filtered_days] - filtered_data)**2)/len(filtered_data))
+				error += ms
+			splined_data[patient] = np.array(splined_data[patient]).T
+		error /= (self.num_items)*(len(splined_data))
+		self.spline_err = error
+
+		self.splined_data = splined_data
+		self.data_splined = True
+		return splined_data
 
 	def retrieve(self, patient_id):
 		""" Returns the data for the specified patient id """
