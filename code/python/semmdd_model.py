@@ -3,6 +3,8 @@ import math
 import optparse
 import datetime
 import time
+import cPickle as pickle
+from urllib2 import URLError
 from SPARQLWrapper import SPARQLWrapper, JSON
 from scipy.interpolate import UnivariateSpline
 
@@ -14,28 +16,77 @@ class data_preproc:
 		""" Really nothing to initalize here """
 		self.sparql_interface = SPARQLWrapper('http://localhost:8080/sparql')
 		self.sparql_interface.setReturnFormat(JSON)
-		self.sparql_interface.setQuery('select distinct ?Concept where {[] a ?Concept} LIMIT 1')
 		self.data_loaded = False
 		self.data_preprocessed = False
 		self.data_splined = False
-		# Test to make sure connection works
-		try:
-			self.sparql_interface.query()
-		except URLError:
-			print "Could not connect to SPARQL Endpoint. Make sure the port forwarding is running and you are on the RPI network"
-			raise IOError
+
+		self.ordered_data = None
+		self.filtered_data = None
+		self.splined_data = None
+
+		self.removed = None
+		self.keep_days = None
+		self.min_days = None
+		self.min_data = None
+		self.spline_err = None
+		self.max_ham = {
+							'Q1':4,
+							'Q2':4,
+							'Q3':4,
+							'Q4':2,
+							'Q5':2,
+							'Q6':2,
+							'Q7':4,
+							'Q8':4,
+							'Q9':4,
+							'Q10':4,
+							'Q11':4,
+							'Q12':2,
+							'Q13':2,
+							'Q14':2,
+							'Q15':4,
+							'Q16':2,
+							'Q17':2, # Should add a/b/c but these are optional and not handled by model yet, also mostly missing
+							'Q18':2,
+							'Q19':2,
+							'Q20':2,
+							'Q21':2,
+							'Q22':2, # similar to 17 wrt optional
+							'Q23':4,
+							'Q24':4,
+							'Q25':2,
+							'Q26':4,
+							'Q27':4,
+							'Q28':4
+		}
 
 
-	def load(self, study='UPittSSRI', chosen_quests=['1','2','3','4','5','6','7','8','10','13'], norm=True):
+	def load(self, loadfile=None, savefile=None, study='UPittSSRI', chosen_quests=['1','2','3','4','5','6','7','8','10','13'], norm=True):
 		""" Loads data from the specified study, currently the only option is 'UPittSSRI'
 				Returns a list of patient ids."""
+		if loadfile != None:
+			# Ability to load previously saved datasets to avoid having to pull it from the database
+			try:
+				loadfilefo = open(loadfile, 'r')
+				self.ordered_data = pickle.load(loadfilefo)
+				loadfilefo.close()
+				self.data = self.ordered_data
+				self.num_items = len(self.data[self.data.keys()[0]]['data'][0])
+				self.data_loaded = True
+				return self.ordered_data.keys()
+			except IOError:
+				raise IOError	
 		try:
 			self.num_items = len(chosen_quests)
 			query = self.make_query(study, chosen_quests)
 			self.sparql_interface.setQuery(query)
 			print "Retrieving data"
 			tic = time.time()
-			raw_data = self.sparql_interface.query().convert()
+			try:
+				raw_data = self.sparql_interface.query().convert()
+			except URLError:
+				print "Could not connect to SPARQL Endpoint. Make sure the port forwarding is running and you are on the RPI network"
+				raise IOError
 			toc = time.time() - tic
 			print "Took %f seconds" % toc
 			print "Making data usable"
@@ -47,6 +98,13 @@ class data_preproc:
 			toc = time.time() - tic
 			print "Took %f seconds" % toc
 			self.data_loaded = True
+			if savefile != None:
+				try:
+					savefilefo = open(savefile, 'w')
+					pickle.dump(self.data, savefilefo)
+					savefilefo.close()
+				except IOError:
+					raise IOError
 			return self.data.keys()
 		except IOError as detail:
 			print "Could not retrieve data:", detail
@@ -120,7 +178,7 @@ class data_preproc:
 			question = i['question']['value'].split('/')[-1]
 			question_slot = question_slots[question]
 			answer = int(i['answer']['value'].split('/')[-1])
-			normed_answer = answer / float(max_ham[question])
+			normed_answer = answer / float(self.max_ham[question])
 			
 			# First setup a dictionary for the patient if one does not already exist
 			if not patient_id in shaped_data:
@@ -196,12 +254,13 @@ class data_preproc:
 			filtered_data[patient]['dates'] = self.ordered_data[patient]['dates'][:final_ind]
 
 		self.filtered_data = filtered_data
+		self.data = filtered_data
 		return filtered_data
 	
-	def spline(self, k=1, s=1, min_data=3):
+	def spline(self, k=1, s=1):
 		""" Interpolates uneven observation data into daily data using scipy.interpolate.UnivariateSpline with parameters k and s given"""
 		# requires filtered_data to exist, check by making sure it isn't empty
-		if len(filtered_data) == 0:
+		if len(self.filtered_data) == 0:
 			raise ValueError
 
 		# first we need to redo the dates as days from start
@@ -218,20 +277,23 @@ class data_preproc:
 			day_indices = np.array(self.filtered_data[patient]['days'])
 			splined_data[patient] = []
 			for question in range(self.num_items):
-				item_data = np.array(i[question] for i in filtered_data[patient]['data'])
+				item_data = np.array([i[question] for i in self.filtered_data[patient]['data']])
+				if len(item_data) == 0:
+					print "Uh, no responses for question %d patient %s" % (question+1, patient)
+					raise ValueError
 				# Now we need to take out the data with None values... not certain how to handle it if the patient ends up not having enough data
 				# because of this filtering, but for UPittSSRI data (primary focus as of 7/29/13) we don't need to worry about it
 				good_indices = np.array([ind for ind, resp in enumerate(item_data) if resp != None])
 				filtered_days = day_indices[good_indices]
 				filtered_data = item_data[good_indices]
-				full_space = np.linspace(0,self.keep_days,num=keep_days)
+				full_space = np.linspace(0,self.keep_days,num=self.keep_days)
 				spl = UnivariateSpline(filtered_days, filtered_data, k=k, s=s)
 				self.residual = spl.get_residual()
 				self.knots = spl.get_knots()
 				splined = spl(full_space)
 				splined_data[patient].append(splined)
 				# Measure error
-				ms = sqrt(sum((splined[filtered_days] - filtered_data)**2)/len(filtered_data))
+				ms = math.sqrt(sum((splined[filtered_days] - filtered_data)**2)/len(filtered_data))
 				error += ms
 			splined_data[patient] = np.array(splined_data[patient]).T
 		error /= (self.num_items)*(len(splined_data))
@@ -239,11 +301,14 @@ class data_preproc:
 
 		self.splined_data = splined_data
 		self.data_splined = True
+		self.data = splined_data
 		return splined_data
 
 	def retrieve(self, patient_id):
 		""" Returns the data for the specified patient id """
 		return self.data[patient_id]
+
+	
 
 
 class luciano_model:
@@ -264,6 +329,8 @@ class luciano_model:
 if __name__ == '__main__':
 	# Just load the UPittSSRI data and print off the first patient
 	data_obj = data_preproc()
-	data_obj.load('UPittSSRI')
+	data_obj.load(study='UPittSSRI', loadfile='UPittSSRI.dat')
+	data_obj.prefilter()
+	data_obj.spline()
 	print "Patient 1's data:"
 	print data_obj.retrieve('1')
