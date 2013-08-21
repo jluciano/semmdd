@@ -61,7 +61,7 @@ class data_preproc:
 		}
 
 
-	def load(self, loadfile=None, savefile=None, study='UPittSSRI', chosen_quests=['1','2','3','4','5','6','7','8','10','13'], norm=True):
+	def load(self, loadfile=None, savefile=None, study='UPittSSRI', chosen_quests=[str(i) for i in range(1,29)], norm=True):
 		""" Loads data from the specified study, currently the only option is 'UPittSSRI'
 				Returns a list of patient ids."""
 		if loadfile != None:
@@ -257,7 +257,7 @@ class data_preproc:
 		self.data = filtered_data
 		return filtered_data
 	
-	def spline(self, k=1, s=1):
+	def spline(self, k=3, s=0.5):
 		""" Interpolates uneven observation data into daily data using scipy.interpolate.UnivariateSpline with parameters k and s given"""
 		# requires filtered_data to exist, check by making sure it isn't empty
 		if len(self.filtered_data) == 0:
@@ -329,7 +329,7 @@ class luciano_model:
 if __name__ == '__main__':
 	# Just load the UPittSSRI data and print off the first patient
 	data_obj = data_preproc()
-	data_obj.load(study='UPittSSRI', loadfile='UPittSSRI.dat')
+	data_obj.load(study='UPittSSRI', savefile='UPittSSRI.dat')
 	data_obj.prefilter()
 	data_obj.spline()
 	print "Patient 1's data:"
