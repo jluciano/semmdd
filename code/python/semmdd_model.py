@@ -145,7 +145,8 @@ class data_preproc:
 			prefix completedpatientID: <http://purl.org/twc/semmdd/source/pican-wpic-pitt-edu/dataset/ppli-ssri/ppli-hams.xls/typed/patient/>
 			prefix datasetvocab: <http://purl.org/twc/semmdd/source/pican-wpic-pitt-edu/dataset/ppli-ssri/vocab/>
 			prefix datasetmeasurement: <http://purl.org/twc/semmdd/source/pican-wpic-pitt-edu/dataset/ppli-ssri/ppli-hams.xls/version/2012-09-08/>
-			prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nprefix openvocab: <http://open.vocab.org/terms/>
+			prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+			prefix openvocab: <http://open.vocab.org/terms/>
 			prefix measurementanswer: <http://purl.org/twc/semmdd/source/pican-wpic-pitt-edu/dataset/ppli-ssri/vocab/enhancement/1/>
 			prefix foaf: <http://xmlns.com/foaf/0.1/>
 			prefix dcterms: <http://purl.org/dc/terms/>
@@ -171,14 +172,17 @@ class data_preproc:
 		# the items being a dictionary of date:list of responses. 
 		question_slots = {'Q'+i:ind for ind, i in enumerate(chosen_quests)}
 		shaped_data = dict()
-
+		rows_added = 0
+		redundant_rows = 0
+		conflicting_rows = 0
 		for i in raw_data['results']['bindings']:
 			patient_id = i['patient']['value'].split('/')[-1]
 			response_date = datetime.date(*[int(j) for j in i['cdate']['value'].split('-')])
 			question = i['question']['value'].split('/')[-1]
 			question_slot = question_slots[question]
 			answer = int(i['answer']['value'].split('/')[-1])
-			normed_answer = answer / float(self.max_ham[question])
+			if norm:
+				answer /= float(self.max_ham[question])
 			
 			# First setup a dictionary for the patient if one does not already exist
 			if not patient_id in shaped_data:
@@ -191,13 +195,19 @@ class data_preproc:
 			# Then put the answer in the appropriate slot
 			# But first, raise an error if it's already been filled... clearly something got screwed up -- I have already checked this and the data is fine
 			if shaped_data[patient_id][response_date][question_slot] != None:
-				print "Conflicting data. Abort."
-				print "Patient ID %s's response to question %s on date %s has already been filled with value %d" (patient_id, question, response_date.ctime(), answer)
-				raise ValueError																																								    
-			if norm:
-				shaped_data[patient_id][response_date][question_slot] = normed_answer
-			else:	
-				shaped_data[patient_id][response_date][question_slot] = answer
+				current = shaped_data[patient_id][response_date][question_slot]				
+				conflict_string =  "Patient ID %s's response to question %s on date %s has already been filled with value %0.2f" % (patient_id, question, response_date.ctime(), current)
+				if current == answer:
+					redundant_rows += 1
+					conflict_string += " -- Redundant"
+				else:
+					conflicting_rows += 1
+					conflict_string += " -- Conflicting, trying to use %0.2f" % answer 
+				print conflict_string
+				continue																																							    	
+			shaped_data[patient_id][response_date][question_slot] = answer
+			rows_added += 1
+		print "Digested %d rows, of which %d were redundant and %d were conflicting" % (rows_added, redundant_rows, conflicting_rows)
 
 		# Now that we've shaped the data, we need to order it by date for the model. Simple enough
 		ordered_data = dict()
@@ -307,6 +317,10 @@ class data_preproc:
 	def retrieve(self, patient_id):
 		""" Returns the data for the specified patient id """
 		return self.data[patient_id]
+
+	def get_keys(self):
+		""" Gets a list of the patients available in the current data. Note that this may change after each step as patients might be removed """
+		return self.data.keys()
 
 	
 
