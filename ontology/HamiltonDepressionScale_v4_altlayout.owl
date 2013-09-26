@@ -1,0 +1,810 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://neurolex.org/wiki/Special:ExportRDF/:Category:Calgary_Depression_Scale"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://neurolex.org/wiki/Special:ExportRDF/:Category:Calgary_Depression_Scale">
+    <Prefix name="" IRI="http://neurolex.org/wiki/Special:ExportRDF/:Category:Calgary_Depression_Scale#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="wiki" IRI="http://neurolex.org/wiki/"/>
+    <Prefix name="ctcae" IRI="http://ncicb.nci.nih.gov/xml/owl/EVS/ctcae.owl#"/>
+    <Prefix name="swivt" IRI="http://semantic-mediawiki.org/swivt/1.0#"/>
+    <Prefix name="property" IRI="http://neurolex.org/wiki/Property-3A"/>
+    <Import>http://semantic-mediawiki.org/swivt/1.0</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An ontology concerning the Hamilton Depression Scale. All scales up to 29 questions and down to 19 questions included.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="swivt:creationDate"/>
+        <Literal datatypeIRI="&xsd;dateTime">2013-07-10T06:24:57-07:00</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#&apos;Hamilton_Depression_Scale&apos;"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-19"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-28"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_Number"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Response_Mapping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_4"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="wiki:Category-3AAffective_assessment"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="wiki:Category-3ARating_scale"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="swivt:Subject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasAnswer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestionNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasSeverity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionNumberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isSeverityOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isTypeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="wiki:Property-3AHas_role"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3AAbbrev"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3ACreated"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3ACurationStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3ADefiningCitation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3ADefinition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3AId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3ALabel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3AModifiedDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="wiki:Property-3ASuperCategory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3AAffective_assessment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ARating_scale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Category:Affective_assessment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Category:Calgary_Depression_Scale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Category:Rating_scale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3AAbbrev"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3ACreated"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3ACurationStatus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3ADefiningCitation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3ADefinition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3AHas_role"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3AId"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3ALabel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3AModifiedDate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property-3ASuperCategory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:Abbrev"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:Created"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:CurationStatus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:DefiningCitation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:Definition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:Has_role"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:Id"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:Label"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:ModifiedDate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="wiki:Property:SuperCategory"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_0"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_1"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_2"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_3"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_4"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Symptom"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swivt:creationDate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#&apos;Hamilton_Depression_Scale&apos;"/>
+        <Class abbreviatedIRI="wiki:Category-3ARating_scale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasSeverity"/>
+            <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf"/>
+            <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-19"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-28"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionOf"/>
+            <Class abbreviatedIRI="wiki:Category-3ARating_scale"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasAnswer"/>
+            <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestionNumber"/>
+            <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_Number"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_4"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_Number"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionNumberOf"/>
+            <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isTypeOf"/>
+            <Class abbreviatedIRI="wiki:Category-3ARating_scale"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isSeverityOf"/>
+            <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_0"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_1"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_2"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_3"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_4"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="wiki:Category-3ARating_scale"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType"/>
+            <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_1"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="wiki:Property-3AHas_role"/>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3AAffective_assessment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="swivt:type"/>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ARating_scale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="wiki:Property-3AHas_role"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3AAffective_assessment"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3AAbbrev"/>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">HRSD</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ADefinition"/>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">The Hamilton Rating Scale for Depression (HRSD), or Hamilton Depression Rating Scale (HDRS) also abbreviated to HAM-D, is a multiple choice questionnaire that clinicians may use to rate the severity of a patient&apos;s major depression. The questionnaire rates the severity of symptoms observed in depression such as low mood, insomnia, agitation, anxiety and weight loss. This instrument is presently one of the most commonly used scales for rating depression in medical research.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ALabel"/>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">Hamilton Depression Scale</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ASuperCategory"/>
+        <NamedIndividual IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Hamilton_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">Rating Scale</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3AAbbrev"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">CDSS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ACreated"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;dateTime">2008-03-14T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ACurationStatus"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">uncurated</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ADefiningCitation"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">Addington, D., Addington, J., Maticka-Tyndale, E., &amp; Joyce, J. (1992). Reliability and validity of a depression rating scale for schizophrenics. Schizophrenia Research, 6, 201-208.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ADefinition"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">The CDSS is an assessment of depression in schizophrenia. It has been extensively evaluated in both relapsed and remitted patients and appears sensitive to change. In comparison to the Hamilton Depression Scale, it has fewer factors and less overlap with positive and negative symptoms. This lack of overlap is present both at the time of relapse and at the time of remission</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3AId"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">birnlex_3010</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ALabel"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">Calgary Depression Scale</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3AModifiedDate"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;dateTime">2009-09-08T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="wiki:Property-3ASuperCategory"/>
+        <NamedIndividual abbreviatedIRI="wiki:Category-3ACalgary_Depression_Scale"/>
+        <Literal datatypeIRI="&xsd;string">Rating scale</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasAnswer"/>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestion"/>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionNumberOf"/>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestionNumber"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isSeverityOf"/>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasSeverity"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType"/>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isTypeOf"/>
+    </InverseObjectProperties>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasAnswer"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestion"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasQuestionNumber"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_Number"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasSeverity"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#hasType"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isAnswerOf"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionNumberOf"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_Number"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isQuestionOf"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isSeverityOf"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#isTypeOf"/>
+        <Class IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Answer</IRI>
+        <Literal datatypeIRI="&xsd;string">A response to a question. Will have a severity level that can range from 0 to 4.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-19</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A 19 question version of the depression scale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#HRSD-28</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A 28 question version of the depression scale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A question to a questionnaire. Has an answer. Has a version.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_1"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_1</IRI>
+        <Literal datatypeIRI="&xsd;string">Doubtful or Trivial: Behavioral evidence and feeling state elicited only on direct questioning.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_0"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_4</IRI>
+        <Literal datatypeIRI="&xsd;string">Absent.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_1"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_4</IRI>
+        <Literal datatypeIRI="&xsd;string">Mild, Trivial, Infrequent: Less than 30 minutes.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_4</IRI>
+        <AbbreviatedIRI>ctcae:Grade_3_Insomnia</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Question_Number</IRI>
+        <Literal datatypeIRI="&xsd;string">Will be a alphanumeric value. Is not zero indexed. For the first question of a questionnaire, the question number would be 1. Can be altered using letter. e.g. 1.b or 1.c for multiple part questions.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#QuestionnaireVersion</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A version of the depression scale is determined by the amount of questions contained.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level</IRI>
+        <Literal datatypeIRI="&xsd;string">A severity level is the response to a question on the questionnaire. It is a numeric value (an int) ranging from 0 to 4 depending on the question that was asked.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_0</IRI>
+        <Literal datatypeIRI="&xsd;string">A response to a question with a value of 0.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_1</IRI>
+        <Literal datatypeIRI="&xsd;string">A response to a question with a value of 1.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_2</IRI>
+        <Literal datatypeIRI="&xsd;string">A response to a question with a value of 2.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_3</IRI>
+        <Literal datatypeIRI="&xsd;string">A response to a question with a value of 3.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_4</IRI>
+        <Literal datatypeIRI="&xsd;string">A response to a question with a value of 4.@en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Category-3AAffective_assessment</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Category:Affective_assessment</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Category-3AAffective_assessment</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Category:Affective_assessment</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Category-3AAffective_assessment</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Affective assessment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Category-3ACalgary_Depression_Scale</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Category:Calgary_Depression_Scale</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Category-3ARating_scale</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Category:Rating_scale</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Category-3ARating_scale</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Category:Rating_scale</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Category-3ARating_scale</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Rating scale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3AAbbrev</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:Abbrev</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3AAbbrev</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:Abbrev</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3AAbbrev</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Abbrev</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3ACreated</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:Created</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3ACreated</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:Created</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3ACreated</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Created</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3ACurationStatus</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:CurationStatus</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3ACurationStatus</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:CurationStatus</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3ACurationStatus</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">CurationStatus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3ADefiningCitation</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:DefiningCitation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3ADefiningCitation</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:DefiningCitation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3ADefiningCitation</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">DefiningCitation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3ADefinition</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:Definition</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3ADefinition</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:Definition</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3ADefinition</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3AHas_role</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:Has_role</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3AHas_role</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:Has_role</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3AHas_role</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Has role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3AId</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:Id</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3AId</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:Id</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3AId</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3ALabel</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:Label</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3ALabel</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:Label</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3ALabel</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Label</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3AModifiedDate</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:ModifiedDate</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3AModifiedDate</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:ModifiedDate</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3AModifiedDate</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ModifiedDate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swivt:page"/>
+        <AbbreviatedIRI>wiki:Property-3ASuperCategory</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Property:SuperCategory</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>wiki:Property-3ASuperCategory</AbbreviatedIRI>
+        <AbbreviatedIRI>wiki:Special:ExportRDF/Property:SuperCategory</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>wiki:Property-3ASuperCategory</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">SuperCategory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>swivt:Subject</AbbreviatedIRI>
+        <IRI>http://semantic-mediawiki.org/swivt/1.0</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>swivt:creationDate</AbbreviatedIRI>
+        <IRI>http://semantic-mediawiki.org/swivt/1.0</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>swivt:page</AbbreviatedIRI>
+        <IRI>http://semantic-mediawiki.org/swivt/1.0</IRI>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_0"/>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_1"/>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_2"/>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_3"/>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level_4"/>
+        <AnnotationProperty IRI="http://escience.rpi.edu/ontology/semanteco/2/0/pollution.owl#Severity_Level"/>
+    </SubAnnotationPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
